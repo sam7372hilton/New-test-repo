@@ -1,0 +1,21 @@
+IndustrySectorKey,IndustrySectorDescrption
+A,Agriculture
+B,Chemical Industry
+C,Consumer Goods
+D,Pharmaceuticals
+E,Electronics
+F,Food & Beverage
+G,Mechanical Engineering
+H,Healthcare
+I,Information Technology
+J,Aerospace & Defense
+K,Construction
+L,Logistics
+M,Mining
+N,Oil & Gas
+P,Public Sector
+R,Retail
+S,Services
+T,Telecommunications
+U,Utilities
+V,Automotive

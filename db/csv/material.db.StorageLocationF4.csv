@@ -1,0 +1,24 @@
+StorageLocKey,StorageLocDescription
+0001,Raw Materials Storage
+0002,Finished Goods Storage
+0003,Packaging Materials
+0004,Quality Inspection Area
+0005,Returned Goods
+0006,Spare Parts Storage
+0007,Tool Storage
+0008,Work-in-Progress Area
+0009,Bulk Storage
+0010,Cold Storage
+0011,Flammable Materials Storage
+0012,Hazardous Materials Storage
+0013,High-Value Items Storage
+0014,Refrigerated Storage
+0015,Shipping Dock
+0016,Receiving Dock
+0017,Assembly Line Storage
+0018,Overflow Storage
+0019,Small Parts Storage
+0020,Warehouse Section A
+0021,Warehouse Section B
+0022,Warehouse Section C
+0023,Warehouse Section D

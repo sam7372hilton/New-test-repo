@@ -1,0 +1,22 @@
+PlantKey,PlantDescription
+1000,Headquarters
+1001,Production Facility - East
+1002,Production Facility - West
+1003,Distribution Center - North
+1004,Distribution Center - South
+2000,R&D Center
+2001,Quality Control Lab
+3000,Sales Office - East
+3001,Sales Office - West
+4000,Warehouse - Central
+4001,Warehouse - East
+4002,Warehouse - West
+5000,Main Plant
+5001,Manufacturing Unit 1
+5002,Manufacturing Unit 2
+6000,Logistics Hub
+6001,Supply Chain Center
+7000,Regional Office - North
+7001,Regional Office - South
+8000,Customer Service Center
+8001,Repair Center

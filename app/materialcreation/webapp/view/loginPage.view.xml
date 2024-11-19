@@ -1,0 +1,55 @@
+<mvc:View
+    xmlns:layout="sap.ui.layout"
+    controllerName="materialcreation.controller.loginPage"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+>
+    <layout:VerticalLayout
+        id="containerLayout"
+        width="100%"
+    >
+        <layout:BlockLayout id="_IDGenBlockLayout">
+            <layout:BlockLayoutRow>
+                <layout:BlockLayoutCell
+                    class="sapUiLargeMarginTop sapUiLargeMarginTop padding"
+                    width="50%"
+                >
+                    <Title
+                        text="Material Creations"
+                        level="H1"
+                        textAlign="End"
+                    />
+                    <Input
+                        id="username"
+                        placeholder="Username"
+                        width="100%"
+                        type="Text"
+                        class="sapUiLargeMarginTop custom-input"
+                        value = "{dataModel>/UserName}"
+                    />
+
+                    <!-- Password Field -->
+                    <Input
+                        id="password"
+                        placeholder="Password"
+                        width="100%"
+                        type="Password"                        
+                        value = "{dataModel>/Password}"
+                        class="sapUiSmallMarginTop custom-input"
+                    />
+
+                    <!-- Login Button -->
+                    <Button
+                        text="Login"
+                        press="onLoginPress"
+                        type="Emphasized"
+                        width="100%"
+                        class="sapUiSmallMarginTop button"
+                    />
+                </layout:BlockLayoutCell>
+            </layout:BlockLayoutRow>
+        </layout:BlockLayout>
+    </layout:VerticalLayout>
+</mvc:View>
