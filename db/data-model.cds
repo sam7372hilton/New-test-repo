@@ -8,7 +8,7 @@ using {
 
 
 entity MaterialMaster {
-    key MaterialNumber  : String(100);
+    key MaterialNumber  : Integer;
         Description     : String(100);
         IndustrySector  : String(40);
         MaterialType    : String(40);

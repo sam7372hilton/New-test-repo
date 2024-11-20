@@ -31,12 +31,39 @@ module.exports = cds.service.impl(async function (srv) {
 
         }
     })
-    this.on('CREATE', 'MaterialMaster', async (req) => {
-        console.log("createMaterial:", req.data);
-    });
+    this.before('POST', 'createMaterial', async (req) => {
+        const data = req.data
+        const materialData = await SELECT.from(MaterialMaster)
+        if (materialData) {
+            const findMaterialNum = materialData.find(materialData.MaterialNumber = data.MaterialNumber)
+            if (findMaterialNum) {
+                return req.reject(400, 'Material Number Already Exist')
+            }
+        }
+    })
 
+ 
     this.on('POST', 'createMaterial', async (req) => {
-        console.log("createMaterial 1:", req.data);
+        try {
+            const data = req.data
+            if (!data.MaterialNumber) {
+                req.reject(400, "Material Number is Mandatory")
+                return;
+            }
+            const payload = {
+                MaterialNumber: data.MaterialNumber,
+                Description: data.Description,
+                IndustrySector: data.IndustrySector,
+                MaterialType: data.MaterialType,
+                Plant: data.Plant,
+                StorageLocation: data.StorageLocation,
+                UOM: data.UOM,
+                MaterialGroup: data.MaterialGroup
+            }
+            return req.info(200, `Material ${data.MaterialNumber} is Created`)
+        } catch (oError) {
+            return req.reject(404, 'Issue in Creating Material')
+        }
     })
 
 

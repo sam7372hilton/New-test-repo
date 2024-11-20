@@ -3,15 +3,15 @@
 Get http://localhost:4004/v2/odata/v4/MaterialSrv/AuthUser?$filter=UserName eq 'emilydavis' and Password eq 'pass1234'
 
 ###
-Get http://localhost:4004/v2/odata/v4/MaterialSrv/MaterialMaster
+Get http://localhost:4004/odata/v4/MaterialSrv/MaterialMaster
 
 
 ### Crete new Material
-POST http://localhost:4004/v2/odata/v4/MaterialSrv/MaterialMaster
+POST http://localhost:4004/odata/v4/MaterialSrv/MaterialMaster
 Content-Type: application/json
 
 {
-    "MaterialNumber":"15",
+    "MaterialNumber":24,
     "Description":"Test Material",
     "IndustrySector":"001000",
     "MaterialType":"001001",
@@ -21,18 +21,4 @@ Content-Type: application/json
     "MaterialGroup":"MOHE"
 }
 
-### Create new Plant
 
-POST http://localhost:4004/v2/odata/v4/MaterialSrv/MaterialMaster
-Content-Type: application/json
-
-{
-    "MaterialNumber":"16",
-    "Description":"Test Material",
-    "IndustrySector":"001000",
-    "MaterialType":"001001",
-    "Plant":"PL01",
-    "StorageLocation":"ST01",
-    "UOM":"EA",
-    "MaterialGroup":"MOHE"
-}

@@ -14,11 +14,23 @@ sap.ui.define([
             _onObjectMatched: function () {
                 this._oViewModel();
                 this._dataModel = this.getOwnerComponent().getModel("CreationDataModel");
+                this._getF4();
 
             },
             _oViewModel: function () {
                 var viewModel = new JSONModel({
                     busy: false,
+                });
+            },
+            _getF4: function () {
+                var oModel = this.getView().getModel();
+                oModel.read("/MaterialMaster", {
+                    success: function (oResponse) {
+                        console.log("oResponse", oResponse);
+                    }.bind(this),
+                    error: function (oError) {
+                        console.log("oError", oError);
+                    }.bind(this),
                 });
             },
 
@@ -52,8 +64,8 @@ sap.ui.define([
                 console.log("ON SAVE")
                 var oModel = this.getView().getModel();
                 var oPayload = {
-                    MaterialNumber: "13",
-                    Description: "Test Material",
+                    MaterialNumber: "16",
+                    Description: "Test Material from fiori",
                     IndustrySector: "001000",
                     MaterialType: "001001",
                     Plant: "PL01",
@@ -61,21 +73,20 @@ sap.ui.define([
                     UOM: "EA",
                     MaterialGroup: "MOHE"
                 };
-                oModel.create("/createMaterial", oPayload, {
+                oModel.create("/MaterialMaster", oPayload, {
                     success: function (oResponse) {
                         console.log("oResponse", oResponse);
-                        MessageToast.show("Record Created successfully");
-                        this.clearData();
+                        sap.m.MessageToast.show("Record Created successfully");                       
                     }.bind(this),
 
                     error: function (oError) {
                         console.log("oError", oError);
-                        MessageToast.show("Record not Created");
+                        sap.m.MessageToast.show(JSON.parse(oError.responseText).error.message.value);
                     }.bind(this),
                 });
             },
-            onMaterialListDetails: function () {
-
+            onMaterialListDetails: function (oEvent) {
+                this.getOwnerComponent().getRouter().navTo("MaterialDetails");
             }
         });
 
